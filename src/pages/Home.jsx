@@ -2,7 +2,7 @@ import React from "react"
 import {Link} from "react-router-dom"
 import {FaArrowRight} from "react-icons/fa"
 import Instructor from "../assets/Images/Instructor.png"
-import Banner from "../assets/images/banner.mp4" 
+
 import bghome from "../assets/images/bghome.svg"
 import HighLightText from "../components/core/HomePage/HighLightText"
 import CodeBlocks from "../components/core/HomePage/CodeBlocks"
@@ -35,7 +35,7 @@ const Home=()=>{
                         <CTAButton text={"Book a Demo"} bgColor={"bg-gray-600"} textColor={"text-white"} border={"border-l-0 border-t-0 border border-gray-300"} linkto={"/signup"}/>
                            </div>
                 <div className="w-[80%] flex justify-center mt-4">
-                     <video muted loop autoPlay className="h-[600px] rounded-lg"><source src={Banner} type="video/mp4" /></video>
+                     <video muted loop autoPlay className="h-[600px] rounded-lg"><source src="/videos/banner.mp4" type="video/mp4" /></video>
                 </div>
                 <div className="w-full flex flex-col items-center  gap-y-5">
                         <CodeBlocks 
@@ -82,7 +82,7 @@ const Home=()=>{
                               <div className="w-[50%] flex flex-col items-start gap-y-3">
                                <div>The modern StudyNotion is the dictates its own terms.Today, to be a competitive specialist requires more than professional skills  </div> 
                                   
-                                <CTAButton  text={"Learn More"} bgColor={"bg-yellow-500"} textColor={"text-black"} linkto="/signup"/>
+                                <CTAButton  text={"Learn More"} bgColor={"bg-yellow-500"} textColor={"text-black"} linkto={"/signup"}/>
                                   
                               </div>
                           </div>
