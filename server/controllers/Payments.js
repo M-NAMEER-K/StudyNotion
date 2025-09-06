@@ -3,7 +3,7 @@ const crypto = require("crypto");
 const Course=require("../models/Course");
 const User =require("../models/User");
 const {mailSender}=require("../utils/mailSender");
-const CourseProgress=require("../models/courseProgress");
+const CourseProgress=require("../models/CourseProgress");
 const {courseEnrollmentEmail}=require("../mail/templates/courseEnrollmentEmail");
 const {paymentSuccessEmail}=require("../mail/templates/paymentSuccessEmail");
 
