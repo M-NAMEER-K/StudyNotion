@@ -25,3 +25,5 @@ exports.mailSender = async (email,title,body) =>{
         console.log(err.message);
     }
 }
+
+
