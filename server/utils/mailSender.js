@@ -1,23 +1,20 @@
-// mailSender.js
-const { Resend } = require("resend");
-    require("dotenv").config();
-// Initialize Resend with your API key
-const resend = new Resend(process.env.RESEND_API_KEY);
+const postmark = require("postmark");
+require("dotenv").config();
 
-exports.mailSender = async (email, title, body) => {
+const client = new postmark.ServerClient(process.env.POSTMARK_API_KEY);
+
+exports.mailSender = async (to, subject, html) => {
   try {
-    // Send email via Resend
-    const data = await resend.emails.send({
-      from: "StudyNotion <onboarding@resend.dev>", // verified sender
-      to: email,
-      subject: title,
-      html: body,
+    const data = await client.sendEmail({
+      From: process.env.POSTMARK_SENDER,
+      To: to,
+      Subject: subject,
+      HtmlBody: html,
     });
-
     console.log("Email sent successfully:", data);
     return data;
   } catch (err) {
     console.error("Error sending email:", err);
-    throw err; // Throw the error so calling code knows something went wrong
+    throw err;
   }
 };
